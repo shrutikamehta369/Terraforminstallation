@@ -9,4 +9,5 @@ terraform version
 
 vi main.tf
 (Write the code mentioned in the createec2instance repo.)
+
 terraform plan
