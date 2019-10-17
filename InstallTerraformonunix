@@ -1,0 +1,12 @@
+Terraform installation on unix:
+
+yum install unzip wget
+sudo wget https://releases.hashicorp.com/terraform/0.12.10/terraform_0.12.10_linux_amd64.zip
+unzip terra*
+ls
+mv terraform /usr/local/bin/
+terraform version
+
+vi main.tf
+(Write the code mentioned in the createec2instance repo.)
+terraform plan
