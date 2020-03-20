@@ -11,6 +11,22 @@ tags = {
 Name = "FirstEc2instance"
 }
 
+#######Adding a subnet in existing vpc#####
+variable "vpc_id_new" {}
+data "aws_vpc" "new" {
+id = "vpc-0f80a0d5348adc1e6"
+}
+
+
+
+
+resource "aws_subnet" "in_secondary_cidr" {
+  vpc_id     = "${data.aws_vpc.new.id}"
+  cidr_block = "10.0.0.0/24"
+}
+~                                                                                                                                                                   
+~   
+
 
 terraform plan
 
