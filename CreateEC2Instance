@@ -26,8 +26,20 @@ resource "aws_subnet" "in_secondary_cidr" {
   vpc_id     = "${data.aws_vpc.new.id}"
   cidr_block = "10.0.0.0/24"
 }
-~                                                                                                                                                                   
-~   
+
+################Creating multiple instances using loop (count)###################################                                                                                                                                                                  
+resource aws_instance "new_inst_loop"
+{
+ami = "${var.ami}"
+instance_type = "t2.micro"
+count = 5
+tags = {
+Name = "Terraform-${count.index+1}"
+}}
+
+output "out_value" {
+value = "${aws_instance.new_inst_loop.*.public_ip}"
+}  
 
 
 terraform plan
