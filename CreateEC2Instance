@@ -11,14 +11,16 @@ tags = {
 Name = "FirstEc2instance"
 }
 
+output "out_value" {
+value = "${aws_instance.testec2.public_ip}"
+}
+
+
 #######Adding a subnet in existing vpc#####
 variable "vpc_id_new" {}
 data "aws_vpc" "new" {
 id = "vpc-0f80a0d5348adc1e6"
 }
-
-
-
 
 resource "aws_subnet" "in_secondary_cidr" {
   vpc_id     = "${data.aws_vpc.new.id}"
