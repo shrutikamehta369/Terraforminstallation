@@ -42,7 +42,10 @@ output "out_value" {
 value = "${aws_instance.new_inst_loop.*.public_ip}"
 }  
 
-
 terraform plan
 
 terraform apply
+
+
+###########################Terraform Destroy#################################
+terraform destroy -target aws_instance.(vmname)
