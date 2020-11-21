@@ -15,6 +15,10 @@ Name = "FirstEc2instance"
 output "out_value" {
 value = "${aws_instance.testec2.public_ip}"
 }
+############Create a S3 Bucket############
+resource "aws_s3_bucket" "create_new_bucket" {
+bucket = "new-bucket-1-2-3-4-5-6-7-8"
+}
 
 
 #######Adding a subnet in existing vpc#####
