@@ -1,0 +1,21 @@
+variable block is made in the main.tf file and the variable is referenced using var.image_id and while executing terraform apply there will be a prompt to enter image id:
+
+provider "aws" {
+region = "us-east-2"
+access_key = "AKIAIR6KNX7BJ6VIQVHA"
+secret_key = "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"
+}
+
+variable "image_id" {
+type = string
+}
+
+
+
+resource "aws_instance" "create_new_imst" {
+ami = var.image_id
+instance_type = "t2.micro"
+tags = {
+Name = "Created using vars"
+}
+}
