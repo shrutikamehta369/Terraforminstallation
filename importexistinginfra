@@ -1,0 +1,5 @@
+create  a main.tf file with below contents:
+
+resource "aws_vpc" "import_existing_vpc" {}
+
+Now, execute command terraform import aws_vpc.import_existing_vpc vpc_id_of_the_existing_vpc_you_want_to_import
