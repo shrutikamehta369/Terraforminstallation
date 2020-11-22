@@ -1,5 +1,18 @@
-create  a main.tf file with below contents:
+1) create  a main.tf file with below contents:
 
 resource "aws_vpc" "import_existing_vpc" {}
 
-Now, execute command terraform import aws_vpc.import_existing_vpc vpc_id_of_the_existing_vpc_you_want_to_import
+2) Now, execute command terraform import aws_vpc.import_existing_vpc vpc_id_of_the_existing_vpc_you_want_to_import
+
+After importing you can perform an update or destroy of the imported resources
+
+##########################For destroy#########################
+After step 2 mentioned above, just execute the command terraform destroy -target aws_vpc.import_existing_vpc
+
+
+##########################For update###########################
+After step 2 mentioned above, perform #######terraform show#########,  it will show the configuations of the existing infra,
+
+Copy required resourcecdata from there to main.tf and then make updates like name etc and run terraform plan and then terraform apply
+
+
