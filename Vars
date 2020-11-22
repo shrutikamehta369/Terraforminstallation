@@ -1,3 +1,10 @@
+Type constraints are created from a mixture of type keywords and type constructors. The supported type keywords are:
+
+string
+number
+bool
+
+
 variable block is made in the main.tf file and the variable is referenced using var.image_id and while executing terraform apply there will be a prompt to enter image id:
 
 provider "aws" {
