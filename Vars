@@ -26,3 +26,19 @@ tags = {
 Name = "Created using vars"
 }
 }
+                                                                  or
+ execute terraform apply -var="var_name=var_value"
+                                                                  or
+provide variable values in any_name.tfvars or terraform.tfvars(automatically loaded) file and terraform apply -var-file="testing.tfvars"  
+
+terraform.tfvars:
+
+image_id = "ami-abc123"
+availability_zone_names = [
+  "us-east-1a",
+  "us-west-1c",
+]
+
+ 
+
+
